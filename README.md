@@ -116,14 +116,18 @@ d.info()
  ![OUTPUT](./q10.png)
  ![OUTPUT](./q11.png)
  ![OUTPUT](./q12.png)
- NULL BEFORE:
+
+NULL BEFORE:
   ![OUTPUT](./q13.png)
-  MODE:
+ 
+ MODE:
   ![OUTPUT](./q14.png)
-  MEDIAN:
+ 
+ MEDIAN:
    ![OUTPUT](./q15.png)
     ![OUTPUT](./q16.png)
-    NON NULL AFTER:
+   
+   NON NULL AFTER:
      ![OUTPUT](./q17.png)
  
 
