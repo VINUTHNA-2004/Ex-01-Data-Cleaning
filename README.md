@@ -39,7 +39,7 @@ df['aired_on']=df['aired_on'].fillna(df['aired_on'].mode()[0])
 df['original_network']=df['original_network'].fillna(df['aired_on'].mode()[0])
 df.head()
 
-df['rating']=df['rating'].fillna(df['rating'].mean())
+df['rating']df['rating'].fillna(df['rating'].mean())
 df['current_overall _rank']=df['current_overall_rank'].fillna(df['current_overall_rank'].mean())
 df.head()
 
@@ -49,32 +49,83 @@ df.head()
 df.info()
 
 df.isnull().sum()
+
 ```
 # OUTPUT
 
 DATA:
 
-![OUTPUT](./1.png)
-![OUTPUT](./3.png)
-![OUTPUT](./4.png)
+![OUTPUT](./q1.png)
+![OUTPUT](./q2.png)
+![OUTPUT](./q3.png)
+![OUTPUT](./q4.png)
 
 NON NULL BEFORE:
 
-![](./2.png)
-
-MODE:
-![](./5.png)
+![](./q5.png)
 
 MEAN:
-![](./6.png)
+![](./q6.png)
 
 MEDIAN:
-![](./7.png)
+![](./q7.png)
+![OUTPUT](./q8.png)
 
 NON NULL AFTER:
-![](./8.png)
+![](./q9.png)
 
-![](./9.png)
+# CODE FOR DATA 2:
+
+```
+import pandas as pd
+import numpy as np
+import seaborn as sns
+d = pd.read_csv("/content/Loan_data.csv")
+d
+d.head()
+d.describe()
+d.tail()
+d.isnull().sum()
+d.shape
+d.columns
+d.duplicated
+
+#Using mode method to fill the data in columns as Object(String)
+#mode()[0] - Takes the most reccuring value and fills the empty cells
+d['Gender'] = d['Gender'].fillna(d['Gender'].mode()[0])
+d['Dependents'] = d['Dependents'].fillna(d['Dependents'].mode()[0])
+d['Self_Employed'] = d['Self_Employed'].fillna(d['Self_Employed'].mode()[0])
+
+#Using mean method to fill the data
+d['LoanAmount'] = d['LoanAmount'].fillna(d['LoanAmount'].mean())
+d['Loan_Amount_Term'] = d['Loan_Amount_Term'].fillna(d['Loan_Amount_Term'].mean())
+d['Credit_History'] = d['Credit_History'].fillna(d['Credit_History'].mean())
+
+sns.boxplot(y="LoanAmount",data=d)
+
+#Checking the total no.of null values again
+d.isnull().sum()
+
+#Checking info of the dataset to check all the columns have entries
+d.info()
+
+```
+# output:
+
+ DATA:
+ ![OUTPUT](./q10.png)
+ ![OUTPUT](./q11.png)
+ ![OUTPUT](./q12.png)
+ NULL BEFORE:
+  ![OUTPUT](./q13.png)
+  MODE:
+  ![OUTPUT](./q14.png)
+  MEDIAN:
+   ![OUTPUT](./q15.png)
+    ![OUTPUT](./q16.png)
+    NON NULL AFTER:
+     ![OUTPUT](./q17.png)
+ 
 
 # RESULT:
 Thus the given data is read,cleansed and cleaned data is saved into the file. 
